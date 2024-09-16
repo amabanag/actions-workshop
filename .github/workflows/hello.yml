@@ -1,4 +1,16 @@
-name: Hello World
+name: Final Workflow DO NOT USE
 
 on:
-  workflow_dispatch
+  workflow_dispatch:
+  issues:
+    types: [opened, edited]
+
+jobs:
+  greet:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Greet the User
+        run: echo "Hello World!"
+      - run: ls -l
+      - uses: actions/checkout@v2
+      - run: ls -ls
